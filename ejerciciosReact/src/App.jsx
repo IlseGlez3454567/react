@@ -1,15 +1,13 @@
-import { MyApp } from "./components/03-27-26/ReactDev/exercise01"
-import { ShoppingList } from "./components/03-27-26/ReactDev/Exercise03"
-import { Profile } from "./components/03-27-26/ReactDev/exersice02"
+import { PropsExersice01 } from "./components/04-03-26/Props01"
+import { Props02 } from "./components/04-03-26/props02"
+
 
 
 function App() {
 
   return (
     <>
-      <MyApp></MyApp>
-      <Profile></Profile>
-      <ShoppingList></ShoppingList>
+      <Props02></Props02>
      
     </>
   )
