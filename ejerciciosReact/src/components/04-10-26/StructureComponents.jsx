@@ -1,3 +1,6 @@
+
+
+// componente producto categoría - Encabezado de cada categoría
 function ProductCategoryRow({ category }) {
     return (
         <tr>
@@ -8,6 +11,7 @@ function ProductCategoryRow({ category }) {
     )
 }
 
+// componente producto - fila para cada producto
 function ProductRow({ product }) {
     const name = product.stocked ? product.name :
         <span style={{ color: 'red' }}>
@@ -22,6 +26,7 @@ function ProductRow({ product }) {
     )
 }
 
+//
 function ProductTable({ products }) {
     const rows = [];
     let lastCategory = null;

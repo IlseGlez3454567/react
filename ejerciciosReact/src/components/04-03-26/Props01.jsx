@@ -1,8 +1,12 @@
 import { useState } from "react"
 
+function log(message) {
+    console.log(message)
 
+}
 
-const PropsExersice01 = () => {
+export const SharedCounter = () => {
+    log('Render')
     // Aquí guardo cuántas veces se ha hecho clic en TOTAL (todos los botones juntos)
     const [count, setCount] = useState(0)
     // Esta función se ejecuta cada vez que alguien le da clic a cualquier botón
@@ -16,22 +20,31 @@ const PropsExersice01 = () => {
     return (
         <div>
             <h1>Total: {count}</h1>
-              {/* Le pasamos la función onAdd a cada botón, todos suman al mismo contador*/}
+            {/* Le pasamos la función onAdd a cada botón, todos suman al mismo contador*/}
             <Product onAdd={onAdd} />
             <Product onAdd={onAdd} />
             <Product onAdd={onAdd} />
+            <ProductContainer onAdd={onAdd}></ProductContainer>
         </div>
     )
-     // Este es el botón (componente hijo)
-    function Product({ onAdd }) {
+    // Este es el botón (componente hijo)
 
-        return (
-            // Cuando se hace clic, ejecuta la función que viene del padre
-            <button onClick={onAdd}>
-                Agregar
-            </button>
-        )
-    }
 }
 
-export { PropsExersice01 }
+function Product({ onAdd }) {
+
+    return (
+        // Cuando se hace clic, ejecuta la función que viene del padre
+        <button onClick={onAdd}>
+            Agregar
+        </button>
+    )
+}
+
+const ProductContainer = ({ onAdd }) => {
+
+    return (
+        <Product onAdd={onAdd}></Product>
+    )
+
+}

@@ -1,14 +1,10 @@
-import { ComponentsComplete } from "./components/04-10-26/StructureComponents"
-import { TicTacToe } from "./components/04-10-26/TicTacToe"
-
-
-
+import { FilterableProductTable } from "./components/26-04-17/ProductList/FilterableProductTable"
 
 function App() {
   //La returnpalabra clave JavaScript significa que lo que viene después se devuelve como un valor a quien llama a la función
   return (
     <>
-      <ComponentsComplete></ComponentsComplete>
+      <FilterableProductTable/>
 
     </>
   )
