@@ -1,10 +1,12 @@
-import { FilterableProductTable } from "./components/26-04-17/ProductList/FilterableProductTable"
+import { TodoContainer } from "./components/26-04-24/TodoList/TodoContainer"
+
+
 
 function App() {
   //La returnpalabra clave JavaScript significa que lo que viene después se devuelve como un valor a quien llama a la función
   return (
     <>
-      <FilterableProductTable/>
+      <TodoContainer/>
 
     </>
   )
