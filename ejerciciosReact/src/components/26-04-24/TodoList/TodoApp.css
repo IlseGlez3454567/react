@@ -1,0 +1,131 @@
+/* CONTENEDOR PRINCIPAL */
+.app-container{
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f4f4fb;
+    border-radius: 20px;
+}
+
+/* HEADER */
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.app-title{
+    font-size: 42px;
+    font-weight: 700;
+    color: #4a4a68;
+}
+
+/* BOTÓN ADD */
+.app-button{
+    background-color: #5b61ff;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.app-button:hover{
+    opacity: 0.9;
+}
+
+/* SELECT */
+.app-filter-button{
+    margin-left: 15px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e5e5f5;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* LISTA */
+.app-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARD */
+.item-card{
+    background-color: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* IZQUIERDA */
+.item-content-info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* CHECK */
+.image-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #ececf4;
+    cursor: pointer;
+}
+
+/* TÍTULO */
+.item-title{
+    font-size: 22px;
+    margin: 0;
+    color: #444;
+}
+
+/* COMPLETADA */
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* FECHA Y HORA */
+.item-hour,
+.item-date{
+    font-size: 14px;
+    color: #777;
+    margin-right: 8px;
+}
+
+/* BOTONES DERECHA */
+.item-content-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.item-button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f4f4f8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.item-button:hover{
+    background-color: #e6e6f5;
+}
+.image-item,
+.item-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

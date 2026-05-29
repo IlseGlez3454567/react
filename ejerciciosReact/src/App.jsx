@@ -1,4 +1,6 @@
 import { TodoContainer } from "./components/26-04-24/TodoList/TodoContainer"
+import "./components/26-04-24/TodoList/TodoApp.css"
+
 
 
 

@@ -1,11 +1,34 @@
+import { useState } from "react"
 
-
-export const TodoHeader = () => {
+//recibe la función addTask desde el componente padre TodoContainer
+export const TodoHeader = ({ addTask }) => {
+    //estado para almacenar el título de la nueva tarea
+    const [taskTitle, setTaskTitle] = useState("")
     return (
         <div className="app-header">
             <h1 className="app-title">TODO LIST</h1>
             <div>
-                <button className="app-button">Add Task</button>
+                <input
+                    type="text"
+                    placeholder="Añadir nueva tarea..."
+                    //conecta el valor del input con el estado taskTitle
+                    //el input siempre mostrará el valor actual del estado
+                    value={taskTitle}
+                    //onChange -> se ejecuta cada vez que el usuario escribe algo
+                    //event.target.value obtiene el texto actual del input
+                    //setTaskTitle actualiza el estado con ese valor
+                    onChange={(event) => setTaskTitle(event.target.value)}
+
+                />
+                {/* al hacer clic ejecuta la función addTask */}
+                <button className="app-button" 
+                onClick={() => {
+                    addTask(taskTitle) //ejecuta la función addTask del componente padre TodoContainer, envia el valor actual de taskTitle
+                    //limpia el input después de agregar la tarea
+                    setTaskTitle("")
+                    
+                }}
+                >Add Task</button>
                 <select className="app-filter-button">
                     <option value="">All  </option>
                     <option value="">Opción 1  </option>
