@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export const TodoContainer = () => {
 
-    //Arreglo que contiene la lista de tareas
+    //arreglo que contiene la lista de tareas
     //antes const tasks = [...] porque era una variable normal
     //tasks → contiene el estado actual
     //setTasks → sirve para actualizarlo
@@ -41,13 +41,29 @@ export const TodoContainer = () => {
 
     ])
 
+    const [filter, setFilter] = useState("todas");
+
+    const filteredTasks = tasks.filter(task => { //filter () recorre todas las tareas una por una
+        if (filter === "todas") {
+            return true;
+        }
+        if(filter === "completadas") {
+            return task.completed;
+        }
+        if (filter === "pendientes") {
+            return !task.completed;
+        }
+    });
+
     //función para crear una nueva tarea
     function addTask(taskTitle) {
+        const now = new Date(); //obtiene fecha y hora actuales y los guarda en now
         const newTask = {
             id: tasks.length + 1, //genera un nuevo id para cada tarea length es el número de elementos en el arreglo
             title: taskTitle,
-            hour: "10:00 AM",
-            date: "15/05/2026"
+            hour: now.toLocaleTimeString(),   // Obtiene la hora actual con formato HH:MM
+            date: now.toLocaleDateString(),
+            completed: false
 
         }
         setTasks([...tasks, newTask])
@@ -122,7 +138,11 @@ export const TodoContainer = () => {
     return (
         <div className="app-container">
             {/* todoheader recibe la función addTask para agregar nuevas tareas */}
-            <TodoHeader addTask={addTask} />
+            <TodoHeader 
+            addTask={addTask}
+            filter={filter}
+            setFilter={setFilter}
+            />
 
             {/* Lista de tareas
              recibe:
@@ -130,7 +150,12 @@ export const TodoContainer = () => {
             - deleteTask -> función para eliminar tareas
             - toggleTask -> función para marcar/desmarcar tareas 
             - editTask -> función para editar tarea */}
-            <TodoList tasks={tasks} deleteTask={deleteTask} toogleTask={toogleTask} editTask={editTask} />
+            <TodoList 
+            tasks={filteredTasks} 
+            deleteTask={deleteTask} 
+            toogleTask={toogleTask} 
+            editTask={editTask} 
+            />
         </div>
     )
 }

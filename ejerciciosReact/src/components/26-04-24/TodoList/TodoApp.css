@@ -22,6 +22,35 @@
     color: #4a4a68;
 }
 
+/* CONTENEDOR INPUT + BOTÓN */
+.new-task-content{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* INPUT */
+.new-task-input {
+    width: 350px;
+    height: 48px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.new-task-input::placeholder{
+    color: #999;
+}
+
+.new-task-input:focus{
+    border-color: #5b61ff;
+    box-shadow: 0 0 0 3px rgba(91, 97, 255, 0.15);
+}
+
 /* BOTÓN ADD */
 .app-button{
     background-color: #5b61ff;
@@ -123,9 +152,17 @@
 .item-button:hover{
     background-color: #e6e6f5;
 }
+
 .image-item,
 .item-button{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.header-actions{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
 }
